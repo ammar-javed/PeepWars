@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -203,6 +204,8 @@ public class LoginActivity extends Activity {
 			try {
 				// Simulate network access.
 				Thread.sleep(2000);
+				Intent navToMainActivity = new Intent(LoginActivity.this, MainActivity.class);
+				startActivity(navToMainActivity);
 			} catch (InterruptedException e) {
 				return false;
 			}
