@@ -10,7 +10,7 @@
     <string name="hello_world">Hello world!</string>
     <string-array name="drawer_options">
         <item>Feed</item>
-        <item>Messages</item>
+        <item>Conversations</item>
         <item>Calendar</item>
         <item>Groups</item>
         <item>Peeps</item>
@@ -46,5 +46,15 @@
             Integer risus est, interdum ac faucibus vel, volutpat a enim.
         </item>
     </string-array>	
+        <string-array name="peep_names">
+        <item>Kamais Dajennoodyerf</item>
+        <item>Lastav Timan</item>
+        <item>Inele Uollifatnairt</item>
+        <item>Ramma Devaj</item>
+        <item>Inhsaa S. Hahs</item>
+        <item>Rma Iwada</item>
+        <item>Nitsuj Mij</item>
+        <item>Helas Smehs</item>
+    </string-array>
 
 </resources>

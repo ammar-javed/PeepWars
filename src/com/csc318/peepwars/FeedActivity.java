@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -124,7 +125,23 @@ public class FeedActivity extends Activity {
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-        Fragment fragment = new FeedFragment();
+    	//TODO: Remove log
+    	Log.w("DrawerItemClick", "" + position);
+    	Fragment fragment;
+    	
+    	switch (position){
+    	case 0:
+    		fragment = new FeedFragment();
+    		break;
+    	case 1:
+    		fragment = new MessagesFragment();
+    		break;
+    	case 4:
+    		fragment = new PeepsFragment();
+    		break;
+    	default:
+    		fragment = new FeedFragment();
+    	}
         Bundle args = new Bundle();
         args.putInt(FeedFragment.ARG_PLANET_NUMBER, position);
         fragment.setArguments(args);
@@ -186,7 +203,69 @@ public class FeedActivity extends Activity {
             ListView mFeedList = (ListView) rootView.findViewById(R.id.news_feed);
             mDemoFeed = getResources().getStringArray(R.array.demo_feed);
             mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
-                    R.layout.drawer_list_item, mDemoFeed));
+                    R.layout.fragment_feed_item, mDemoFeed));
+            getActivity().setTitle(planet);
+            return rootView;
+        }
+    }
+    
+    /**
+     * Fragment that appears in the "content_frame", shows a planet
+     */
+    public static class MessagesFragment extends Fragment {
+        public static final String ARG_PLANET_NUMBER = "planet_number";
+        private String[] mDemoNames;
+
+        public MessagesFragment() {
+            // Empty constructor required for fragment subclasses
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_conversations, container, false);
+            int i = getArguments().getInt(ARG_PLANET_NUMBER);
+            String planet = getResources().getStringArray(R.array.drawer_options)[i];
+
+//            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
+//                            "drawable", getActivity().getPackageName());
+            ListView mFeedList = (ListView) rootView.findViewById(R.id.conversations);
+            mDemoNames = getResources().getStringArray(R.array.peep_names);
+            //TODO: Remove logs
+            Log.w("Layout", "" + R.layout.fragment_feed_item);
+            Log.w("String Array" , "" + mDemoNames);
+            Log.w("Activity Context", "" + getActivity());
+            mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.fragment_conversations_cell, mDemoNames));
+            getActivity().setTitle(planet);
+            return rootView;
+        }
+    }
+    
+    /**
+     * Fragment that appears in the "content_frame", shows a planet
+     */
+    public static class PeepsFragment extends Fragment {
+        public static final String ARG_PLANET_NUMBER = "planet_number";
+        private String[] mDemoNames;
+
+        public PeepsFragment() {
+            // Empty constructor required for fragment subclasses
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_peeps, container, false);
+            int i = getArguments().getInt(ARG_PLANET_NUMBER);
+            String planet = getResources().getStringArray(R.array.drawer_options)[i];
+
+//            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
+//                            "drawable", getActivity().getPackageName());
+            ListView mFeedList = (ListView) rootView.findViewById(R.id.peeps);
+            mDemoNames = getResources().getStringArray(R.array.peep_names);
+            mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.fragment_peeps_cell, mDemoNames));
             getActivity().setTitle(planet);
             return rootView;
         }
