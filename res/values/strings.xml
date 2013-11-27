@@ -21,6 +21,30 @@
  	<string name="drawer_close">Close navigation drawer</string>
 	<string name="action_websearch">Web search</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
- 	
+        <string-array name="demo_feed">
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula sollicitudin ante. </item>
+        <item>Nunc nec nisi sagittis, consectetur felis eu, hendrerit neque. In hac habitasse platea dictumst. </item>
+        <item>Donec fermentum quis turpis sed faucibus. 
+            Phasellus ultrices a erat eu adipiscing. 
+            Nullam eget nunc et mauris ullamcorper placerat et sed mauris. 
+            Donec non est mattis, viverra mauris quis, eleifend magna. 
+            Curabitur et purus nec neque facilisis feugiat nec sed nisl. 
+            Cras auctor id risus a sodales.</item>
+        <item>Vestibulum tristique, justo et gravida pretium, 
+            est ipsum tincidunt sem, nec tempor metus nisi eu erat. 
+            Nulla ut augue massa. Duis eu sollicitudin est.</item>
+        <item>Suspendisse eu arcu tortor. 
+            Nullam volutpat, est ac rhoncus mattis, eros tellus dignissim nunc, 
+            quis malesuada lectus erat vel dolor.</item>
+        <item>
+            Mauris cursus commodo quam, nec semper dolor molestie sed. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Phasellus egestas mi leo, vel vehicula arcu dictum lacinia. 
+            Cras interdum in sapien id molestie. Praesent eget egestas justo, 
+            eu egestas urna. Donec eleifend neque ac neque consequat iaculis. 
+            In porta magna sapien, quis porttitor risus tincidunt eu. 
+            Integer risus est, interdum ac faucibus vel, volutpat a enim.
+        </item>
+    </string-array>	
 
 </resources>

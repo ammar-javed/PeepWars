@@ -1,7 +1,5 @@
 package com.csc318.peepwars;
 
-import java.util.Locale;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -17,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 public class FeedActivity extends Activity {
@@ -127,9 +124,9 @@ public class FeedActivity extends Activity {
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-        Fragment fragment = new PlanetFragment();
+        Fragment fragment = new FeedFragment();
         Bundle args = new Bundle();
-        args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
+        args.putInt(FeedFragment.ARG_PLANET_NUMBER, position);
         fragment.setArguments(args);
 
         FragmentManager fragmentManager = getFragmentManager();
@@ -169,10 +166,11 @@ public class FeedActivity extends Activity {
     /**
      * Fragment that appears in the "content_frame", shows a planet
      */
-    public static class PlanetFragment extends Fragment {
+    public static class FeedFragment extends Fragment {
         public static final String ARG_PLANET_NUMBER = "planet_number";
+        private String[] mDemoFeed;
 
-        public PlanetFragment() {
+        public FeedFragment() {
             // Empty constructor required for fragment subclasses
         }
 
@@ -183,11 +181,15 @@ public class FeedActivity extends Activity {
             int i = getArguments().getInt(ARG_PLANET_NUMBER);
             String planet = getResources().getStringArray(R.array.drawer_options)[i];
 
-            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
-                            "drawable", getActivity().getPackageName());
-            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
+//            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
+//                            "drawable", getActivity().getPackageName());
+            ListView mFeedList = (ListView) rootView.findViewById(R.id.news_feed);
+            mDemoFeed = getResources().getStringArray(R.array.demo_feed);
+            mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.drawer_list_item, mDemoFeed));
             getActivity().setTitle(planet);
             return rootView;
         }
     }
+    
 }

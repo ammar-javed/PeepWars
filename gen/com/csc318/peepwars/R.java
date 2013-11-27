@@ -9,6 +9,7 @@ package com.csc318.peepwars;
 
 public final class R {
     public static final class array {
+        public static final int demo_feed=0x7f060001;
         public static final int drawer_options=0x7f060000;
     }
     public static final class attr {
@@ -33,12 +34,12 @@ public final class R {
         public static final int content_frame=0x7f090001;
         public static final int drawer_layout=0x7f090000;
         public static final int email=0x7f090006;
-        public static final int image=0x7f09000c;
         public static final int left_drawer=0x7f090002;
         public static final int login=0x7f090008;
         public static final int login_form=0x7f090005;
         public static final int login_status=0x7f090003;
         public static final int login_status_message=0x7f090004;
+        public static final int news_feed=0x7f09000c;
         public static final int pager=0x7f09000a;
         public static final int pager_title_strip=0x7f09000b;
         public static final int password=0x7f090007;
