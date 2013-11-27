@@ -46,7 +46,8 @@
             Integer risus est, interdum ac faucibus vel, volutpat a enim.
         </item>
     </string-array>	
-        <string-array name="peep_names">
+    
+	<string-array name="peep_names">
         <item>Kamais Dajennoodyerf</item>
         <item>Lastav Timan</item>
         <item>Inele Uollifatnairt</item>
@@ -55,6 +56,17 @@
         <item>Rma Iwada</item>
         <item>Nitsuj Mij</item>
         <item>Helas Smehs</item>
+    </string-array>
+    
+	<string-array name="demo_stats">
+        <item>Championships Holding: 7</item>
+        <item>Championships Held: 10</item>
+        <item>Longest Streak: 3 Matches</item>
+        <item>Wins: 20</item>
+        <item>Loses: 5</item>
+        <item>W/L: 4.00</item>
+        <item>Duels won: 2</item>
+        <item>Duels lost: 5</item>
     </string-array>
 
 </resources>

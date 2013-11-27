@@ -10,6 +10,7 @@ package com.csc318.peepwars;
 public final class R {
     public static final class array {
         public static final int demo_feed=0x7f060001;
+        public static final int demo_stats=0x7f060003;
         public static final int drawer_options=0x7f060000;
         public static final int peep_names=0x7f060002;
     }
@@ -30,8 +31,8 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f090014;
-        public static final int action_settings=0x7f090013;
+        public static final int action_forgot_password=0x7f090016;
+        public static final int action_settings=0x7f090015;
         public static final int content_frame=0x7f090001;
         public static final int conversations=0x7f09000c;
         public static final int drawer_layout=0x7f090000;
@@ -51,6 +52,8 @@ public final class R {
         public static final int peeps=0x7f090011;
         public static final int section_label=0x7f090010;
         public static final int sign_in_button=0x7f090009;
+        public static final int statistic=0x7f090014;
+        public static final int user_stats=0x7f090013;
     }
     public static final class layout {
         public static final int activity_feed=0x7f030000;
@@ -64,6 +67,8 @@ public final class R {
         public static final int fragment_main_dummy=0x7f030008;
         public static final int fragment_peeps=0x7f030009;
         public static final int fragment_peeps_cell=0x7f03000a;
+        public static final int fragment_user_stats=0x7f03000b;
+        public static final int fragment_user_stats_cell=0x7f03000c;
     }
     public static final class menu {
         public static final int feed=0x7f080000;
