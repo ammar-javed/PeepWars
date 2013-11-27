@@ -6,5 +6,21 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+    <string name="title_activity_feed">FeedActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string-array name="drawer_options">
+        <item>Feed</item>
+        <item>Messages</item>
+        <item>Calendar</item>
+        <item>Groups</item>
+        <item>Peeps</item>
+        <item>My Stats</item>
+        <item>Account Settings</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+ 	<string name="drawer_close">Close navigation drawer</string>
+	<string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+ 	
 
 </resources>

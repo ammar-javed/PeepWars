@@ -204,8 +204,8 @@ public class LoginActivity extends Activity {
 			try {
 				// Simulate network access.
 				Thread.sleep(2000);
-				Intent navToMainActivity = new Intent(LoginActivity.this, MainActivity.class);
-				startActivity(navToMainActivity);
+				Intent navToFeedActivity = new Intent(LoginActivity.this, FeedActivity.class);
+				startActivity(navToFeedActivity);
 			} catch (InterruptedException e) {
 				return false;
 			}
