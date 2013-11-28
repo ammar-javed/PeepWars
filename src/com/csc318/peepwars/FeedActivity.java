@@ -3,6 +3,7 @@ package com.csc318.peepwars;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -26,13 +27,17 @@ public class FeedActivity extends Activity {
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mPlanetTitles;
+    private FragmentManager fm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
+        fm = getFragmentManager();
 
-        mTitle = mDrawerTitle = getTitle();
+        //TODO: Change title to email address used during login
+        mTitle = mDrawerTitle = "PeepWars";
         mPlanetTitles = getResources().getStringArray(R.array.drawer_options);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -132,15 +137,23 @@ public class FeedActivity extends Activity {
     	switch (position){
     	case 0:
     		fragment = new FeedFragment();
+    		fm.beginTransaction().addToBackStack("FeedFragment").commit();
     		break;
     	case 1:
     		fragment = new MessagesFragment();
+    		fm.beginTransaction().addToBackStack("MessagesFragment").commit();
+    		break;
+    	case 3:
+    		fragment = new GroupsFragments();
     		break;
     	case 4:
     		fragment = new PeepsFragment();
     		break;
     	case 5:
     		fragment = new StatsFragment();
+    		break;
+    	case 6:
+    		fragment = new SettingsFragment();
     		break;
     	default:
     		fragment = new FeedFragment();
@@ -298,6 +311,64 @@ public class FeedActivity extends Activity {
             mStats = getResources().getStringArray(R.array.demo_stats);
             mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.fragment_user_stats_cell, mStats));
+            getActivity().setTitle(planet);
+            return rootView;
+        }
+    }
+    
+    /**
+     * Fragment that appears in the "content_frame", shows a planet
+     */
+    public static class GroupsFragments extends Fragment {
+        public static final String ARG_PLANET_NUMBER = "planet_number";
+        private String[] mGroups;
+
+        public GroupsFragments() {
+            // Empty constructor required for fragment subclasses
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_groups, container, false);
+            int i = getArguments().getInt(ARG_PLANET_NUMBER);
+            String planet = getResources().getStringArray(R.array.drawer_options)[i];
+
+//            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
+//                            "drawable", getActivity().getPackageName());
+            ListView mFeedList = (ListView) rootView.findViewById(R.id.groups_list);
+            mGroups = getResources().getStringArray(R.array.demo_groups);
+            mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.fragment_groups_cell, mGroups));
+            getActivity().setTitle(planet);
+            return rootView;
+        }
+    }
+    
+    /**
+     * Fragment that appears in the "content_frame", shows a planet
+     */
+    public static class SettingsFragment extends Fragment {
+        public static final String ARG_PLANET_NUMBER = "planet_number";
+        private String[] mDemoSettings;
+
+        public SettingsFragment() {
+            // Empty constructor required for fragment subclasses
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_account_settings, container, false);
+            int i = getArguments().getInt(ARG_PLANET_NUMBER);
+            String planet = getResources().getStringArray(R.array.drawer_options)[i];
+
+//            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
+//                            "drawable", getActivity().getPackageName());
+            ListView mFeedList = (ListView) rootView.findViewById(R.id.settings);
+            mDemoSettings = getResources().getStringArray(R.array.demo_settings);
+            mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.fragment_account_settings_cell, mDemoSettings));
             getActivity().setTitle(planet);
             return rootView;
         }

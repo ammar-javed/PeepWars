@@ -46,7 +46,6 @@
             Integer risus est, interdum ac faucibus vel, volutpat a enim.
         </item>
     </string-array>	
-    
 	<string-array name="peep_names">
         <item>Kamais Dajennoodyerf</item>
         <item>Lastav Timan</item>
@@ -57,7 +56,6 @@
         <item>Nitsuj Mij</item>
         <item>Helas Smehs</item>
     </string-array>
-    
 	<string-array name="demo_stats">
         <item>Championships Holding: 7</item>
         <item>Championships Held: 10</item>
@@ -67,6 +65,24 @@
         <item>W/L: 4.00</item>
         <item>Duels won: 2</item>
         <item>Duels lost: 5</item>
+    </string-array>
+  	<string-array name="demo_groups">
+        <item>Group 1</item>
+        <item>Group 2</item>
+        <item>Group 3</item>
+        <item>Group 4</item>
+        <item>Group 5</item>
+        <item>Group 6</item>
+        <item>Group 7</item>
+        <item>Group 8</item>
+    </string-array>
+  	<string-array name="demo_settings">
+        <item>Change Display Name</item>
+        <item>Reset Password</item>
+        <item>Link/Unlink Facebook</item>
+        <item>Link/Unlink Twitter</item>
+        <item>Link/Unlink Google+</item>
+        <item>Change Theme</item>
     </string-array>
 
 </resources>
