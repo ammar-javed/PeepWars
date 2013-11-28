@@ -84,5 +84,11 @@
         <item>Link/Unlink Google+</item>
         <item>Change Theme</item>
     </string-array>
+    <string-array name="demo_group_users">
+        <item>Lastav Timan</item>
+        <item>Ramma Devaj</item>
+        <item>Inhsaa S. Hahs</item>
+        <item>Nitsuj Mij</item>
+    </string-array>
 
 </resources>

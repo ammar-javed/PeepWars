@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class GroupActivity extends FragmentActivity {
@@ -75,9 +77,15 @@ public class GroupActivity extends FragmentActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a DummySectionFragment (defined as a static inner class
             // below) with the page number as its lone argument.
-            Fragment fragment = new DummySectionFragment();
+            Fragment fragment;
+            switch(position) {
+            	case 0 : fragment = new GroupHomeFragment();
+            			 break;
+            	default : fragment = new GroupHomeFragment();
+            			  break;
+            }
             Bundle args = new Bundle();
-            args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+            args.putInt(GroupHomeFragment.ARG_SECTION_NUMBER, position + 1);
             fragment.setArguments(args);
             return fragment;
         }
@@ -107,24 +115,30 @@ public class GroupActivity extends FragmentActivity {
      * A dummy fragment representing a section of the app, but that simply
      * displays dummy text.
      */
-    public static class DummySectionFragment extends Fragment {
+    public static class GroupHomeFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
         public static final String ARG_SECTION_NUMBER = "section_number";
+        private String[] mDemoGroupUsers;
 
-        public DummySectionFragment() {
+        public GroupHomeFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main_dummy, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_group_home, container, false);
             TextView dummyTextView = (TextView) rootView.findViewById(R.id.section_label);
             dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            // my addition, needs revision
+            ListView mGroupUsersList = (ListView) rootView.findViewById(R.id.group_home);
+            mDemoGroupUsers = getResources().getStringArray(R.array.demo_group_users);
+            
+            mGroupUsersList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.fragment_group_home_cell, mDemoGroupUsers));
             return rootView;
         }
     }
-
 }
