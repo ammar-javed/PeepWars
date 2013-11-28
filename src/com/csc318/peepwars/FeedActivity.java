@@ -3,7 +3,8 @@ package com.csc318.peepwars;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+// import android.app.FragmentTransaction;
 
 public class FeedActivity extends Activity {
     private DrawerLayout mDrawerLayout;
@@ -27,14 +29,14 @@ public class FeedActivity extends Activity {
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mPlanetTitles;
-    private FragmentManager fm;
+//    private FragmentManager fm;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
-        fm = getFragmentManager();
+//        fm = getFragmentManager();
 
         //TODO: Change title to email address used during login
         mTitle = mDrawerTitle = "PeepWars";
@@ -137,11 +139,11 @@ public class FeedActivity extends Activity {
     	switch (position){
     	case 0:
     		fragment = new FeedFragment();
-    		fm.beginTransaction().addToBackStack("FeedFragment").commit();
+//    		fm.beginTransaction().addToBackStack("FeedFragment").commit();
     		break;
     	case 1:
     		fragment = new MessagesFragment();
-    		fm.beginTransaction().addToBackStack("MessagesFragment").commit();
+//    		fm.beginTransaction().addToBackStack("MessagesFragment").commit();
     		break;
     	case 3:
     		fragment = new GroupsFragments();
@@ -307,9 +309,9 @@ public class FeedActivity extends Activity {
 
 //            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
 //                            "drawable", getActivity().getPackageName());
-            ListView mFeedList = (ListView) rootView.findViewById(R.id.user_stats);
+            ListView mStatsList = (ListView) rootView.findViewById(R.id.user_stats);
             mStats = getResources().getStringArray(R.array.demo_stats);
-            mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
+            mStatsList.setAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.fragment_user_stats_cell, mStats));
             getActivity().setTitle(planet);
             return rootView;
@@ -336,13 +338,30 @@ public class FeedActivity extends Activity {
 
 //            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
 //                            "drawable", getActivity().getPackageName());
-            ListView mFeedList = (ListView) rootView.findViewById(R.id.groups_list);
+            ListView mGroupList = (ListView) rootView.findViewById(R.id.groups_list);
             mGroups = getResources().getStringArray(R.array.demo_groups);
-            mFeedList.setAdapter(new ArrayAdapter<String>(getActivity(),
+            mGroupList.setAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.fragment_groups_cell, mGroups));
+            // setting the listener to enable clickable groups
+			mGroupList.setOnItemClickListener(new GroupItemClickListener());
             getActivity().setTitle(planet);
             return rootView;
         }
+    }
+    
+    /* The click listner for ListView in the groups fragment */
+    private static class GroupItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//            selectItem(position);
+        	  switchToGroupPage(position, view);
+        }
+    }
+    
+    private static void switchToGroupPage(int position, View view) {
+    	// currently not using position, it might be used later
+    	Intent switchToGroup = new Intent(view.getContext(), GroupActivity.class);
+    	view.getContext().startActivity(switchToGroup);
     }
     
     /**
