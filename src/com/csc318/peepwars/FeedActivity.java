@@ -145,6 +145,9 @@ public class FeedActivity extends Activity {
     		fragment = new MessagesFragment();
 //    		fm.beginTransaction().addToBackStack("MessagesFragment").commit();
     		break;
+    	case 2:
+    		fragment = new CalendarFragment();
+    		break;
     	case 3:
     		fragment = new GroupsFragments();
     		break;
@@ -393,4 +396,19 @@ public class FeedActivity extends Activity {
         }
     }
     
+    public static class CalendarFragment extends Fragment {
+        public static final String ARG_PLANET_NUMBER = "planet_number";
+
+        public CalendarFragment() {
+            // Empty constructor required for fragment subclasses
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_user_calendar, container, false);
+ 
+            return rootView;
+        }
+    }
 }

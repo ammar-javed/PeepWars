@@ -83,8 +83,10 @@ public class GroupActivity extends FragmentActivity {
             			 break;
             	case 1 : fragment = new GroupConvFragment();
             			 break;
-            	case 2 : fragment = new GroupStatsFragment();
+            	case 2 : fragment = new GroupCalendarFragment();
    			 			 break;
+            	case 3 : fragment = new GroupStatsFragment();
+		 			 	 break;
             	default : fragment = new GroupHomeFragment();
             			  break;
             }
@@ -97,19 +99,22 @@ public class GroupActivity extends FragmentActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
             switch (position) {
+            // maybe add all the strings created here to strings.xml
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return "Group Home";
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
+                    return "Group Conversation";
                 case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+                	return "Group Calendar";                    
+                case 3:
+                	return "Group Statistics";
             }
             return null;
         }
@@ -134,8 +139,8 @@ public class GroupActivity extends FragmentActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_group_home, container, false);
-            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_home_label);
-            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+//            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_home_label);
+//            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             // my addition, needs revision
             ListView mGroupUsersList = (ListView) rootView.findViewById(R.id.group_home);
             mDemoGroupUsers = getResources().getStringArray(R.array.demo_group_users);
@@ -161,8 +166,8 @@ public class GroupActivity extends FragmentActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_group_conversations, container, false);
-            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_conv_label);
-            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+//            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_conv_label);
+//            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             // my addition, needs revision
             ListView mGroupUsersList = (ListView) rootView.findViewById(R.id.group_conversations);
             mDemoGroupConv = getResources().getStringArray(R.array.demo_group_convs);
@@ -188,14 +193,34 @@ public class GroupActivity extends FragmentActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_group_stats, container, false);
-            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_stats_label);
-            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+//            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_stats_label);
+//            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             // my addition, needs revision
             ListView mGroupUsersList = (ListView) rootView.findViewById(R.id.group_stats);
             mDemoGroupStats = getResources().getStringArray(R.array.demo_group_stats);
             
             mGroupUsersList.setAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.fragment_group_stats_cell, mDemoGroupStats));
+            return rootView;
+        }
+    }
+    
+    public static class GroupCalendarFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        public static final String ARG_SECTION_NUMBER = "section_number";
+
+        public GroupCalendarFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_group_calendar, container, false);
+//            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_calendar_label);
+//            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }

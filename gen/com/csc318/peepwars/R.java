@@ -37,24 +37,26 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f090024;
-        public static final int action_settings=0x7f090023;
+        public static final int action_forgot_password=0x7f090027;
+        public static final int action_settings=0x7f090026;
         public static final int content_frame=0x7f090001;
         public static final int conversations=0x7f09000e;
         public static final int drawer_layout=0x7f090000;
         public static final int email=0x7f090008;
-        public static final int group=0x7f09001c;
-        public static final int group_conv=0x7f090014;
-        public static final int group_conv_label=0x7f090012;
-        public static final int group_conversations=0x7f090013;
-        public static final int group_home=0x7f090016;
-        public static final int group_home_dummy=0x7f09001e;
-        public static final int group_home_label=0x7f090015;
-        public static final int group_stat_cell=0x7f09001a;
-        public static final int group_stats=0x7f090019;
-        public static final int group_stats_label=0x7f090018;
-        public static final int group_user=0x7f090017;
-        public static final int groups_list=0x7f09001b;
+        public static final int group=0x7f09001e;
+        public static final int group_calendar_img=0x7f090013;
+        public static final int group_calendar_label=0x7f090012;
+        public static final int group_conv=0x7f090016;
+        public static final int group_conv_label=0x7f090014;
+        public static final int group_conversations=0x7f090015;
+        public static final int group_home=0x7f090018;
+        public static final int group_home_dummy=0x7f090020;
+        public static final int group_home_label=0x7f090017;
+        public static final int group_stat_cell=0x7f09001c;
+        public static final int group_stats=0x7f09001b;
+        public static final int group_stats_label=0x7f09001a;
+        public static final int group_user=0x7f090019;
+        public static final int groups_list=0x7f09001d;
         public static final int left_drawer=0x7f090002;
         public static final int login=0x7f09000a;
         public static final int login_form=0x7f090007;
@@ -66,14 +68,15 @@ public final class R {
         public static final int pager=0x7f090003;
         public static final int pager_title_strip=0x7f090004;
         public static final int password=0x7f090009;
-        public static final int peep_name=0x7f090020;
-        public static final int peeps=0x7f09001f;
-        public static final int section_label=0x7f09001d;
+        public static final int peep_name=0x7f090022;
+        public static final int peeps=0x7f090021;
+        public static final int section_label=0x7f09001f;
         public static final int setting=0x7f09000d;
         public static final int settings=0x7f09000c;
         public static final int sign_in_button=0x7f09000b;
-        public static final int statistic=0x7f090022;
-        public static final int user_stats=0x7f090021;
+        public static final int statistic=0x7f090025;
+        public static final int user_calendar_img=0x7f090023;
+        public static final int user_stats=0x7f090024;
     }
     public static final class layout {
         public static final int activity_feed=0x7f030000;
@@ -98,8 +101,9 @@ public final class R {
         public static final int fragment_main_dummy=0x7f030013;
         public static final int fragment_peeps=0x7f030014;
         public static final int fragment_peeps_cell=0x7f030015;
-        public static final int fragment_user_stats=0x7f030016;
-        public static final int fragment_user_stats_cell=0x7f030017;
+        public static final int fragment_user_calendar=0x7f030016;
+        public static final int fragment_user_stats=0x7f030017;
+        public static final int fragment_user_stats_cell=0x7f030018;
     }
     public static final class menu {
         public static final int feed=0x7f080000;
