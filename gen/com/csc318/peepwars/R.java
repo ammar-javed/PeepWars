@@ -32,8 +32,9 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_drawer=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
+        public static final int calendar_img=0x7f020000;
+        public static final int ic_drawer=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
         public static final int action_forgot_password=0x7f090024;
@@ -85,19 +86,20 @@ public final class R {
         public static final int fragment_conversations_cell=0x7f030007;
         public static final int fragment_feed=0x7f030008;
         public static final int fragment_feed_item=0x7f030009;
-        public static final int fragment_group_conversations=0x7f03000a;
-        public static final int fragment_group_conversations_cell=0x7f03000b;
-        public static final int fragment_group_home=0x7f03000c;
-        public static final int fragment_group_home_cell=0x7f03000d;
-        public static final int fragment_group_stats=0x7f03000e;
-        public static final int fragment_group_stats_cell=0x7f03000f;
-        public static final int fragment_groups=0x7f030010;
-        public static final int fragment_groups_cell=0x7f030011;
-        public static final int fragment_main_dummy=0x7f030012;
-        public static final int fragment_peeps=0x7f030013;
-        public static final int fragment_peeps_cell=0x7f030014;
-        public static final int fragment_user_stats=0x7f030015;
-        public static final int fragment_user_stats_cell=0x7f030016;
+        public static final int fragment_group_calendar=0x7f03000a;
+        public static final int fragment_group_conversations=0x7f03000b;
+        public static final int fragment_group_conversations_cell=0x7f03000c;
+        public static final int fragment_group_home=0x7f03000d;
+        public static final int fragment_group_home_cell=0x7f03000e;
+        public static final int fragment_group_stats=0x7f03000f;
+        public static final int fragment_group_stats_cell=0x7f030010;
+        public static final int fragment_groups=0x7f030011;
+        public static final int fragment_groups_cell=0x7f030012;
+        public static final int fragment_main_dummy=0x7f030013;
+        public static final int fragment_peeps=0x7f030014;
+        public static final int fragment_peeps_cell=0x7f030015;
+        public static final int fragment_user_stats=0x7f030016;
+        public static final int fragment_user_stats_cell=0x7f030017;
     }
     public static final class menu {
         public static final int feed=0x7f080000;
