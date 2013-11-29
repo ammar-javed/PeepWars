@@ -81,6 +81,10 @@ public class GroupActivity extends FragmentActivity {
             switch(position) {
             	case 0 : fragment = new GroupHomeFragment();
             			 break;
+            	case 1 : fragment = new GroupConvFragment();
+            			 break;
+            	case 2 : fragment = new GroupStatsFragment();
+   			 			 break;
             	default : fragment = new GroupHomeFragment();
             			  break;
             }
@@ -130,7 +134,7 @@ public class GroupActivity extends FragmentActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_group_home, container, false);
-            TextView dummyTextView = (TextView) rootView.findViewById(R.id.section_label);
+            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_home_label);
             dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             // my addition, needs revision
             ListView mGroupUsersList = (ListView) rootView.findViewById(R.id.group_home);
@@ -138,6 +142,60 @@ public class GroupActivity extends FragmentActivity {
             
             mGroupUsersList.setAdapter(new ArrayAdapter<String>(getActivity(),
                     R.layout.fragment_group_home_cell, mDemoGroupUsers));
+            return rootView;
+        }
+    }
+    
+    public static class GroupConvFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        public static final String ARG_SECTION_NUMBER = "section_number";
+        private String[] mDemoGroupConv;
+
+        public GroupConvFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_group_conversations, container, false);
+            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_conv_label);
+            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            // my addition, needs revision
+            ListView mGroupUsersList = (ListView) rootView.findViewById(R.id.group_conversations);
+            mDemoGroupConv = getResources().getStringArray(R.array.demo_group_convs);
+            
+            mGroupUsersList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.fragment_group_conversations_cell, mDemoGroupConv));
+            return rootView;
+        }
+    }
+    
+    public static class GroupStatsFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        public static final String ARG_SECTION_NUMBER = "section_number";
+        private String[] mDemoGroupStats;
+
+        public GroupStatsFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_group_stats, container, false);
+            TextView dummyTextView = (TextView) rootView.findViewById(R.id.group_stats_label);
+            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            // my addition, needs revision
+            ListView mGroupUsersList = (ListView) rootView.findViewById(R.id.group_stats);
+            mDemoGroupStats = getResources().getStringArray(R.array.demo_group_stats);
+            
+            mGroupUsersList.setAdapter(new ArrayAdapter<String>(getActivity(),
+                    R.layout.fragment_group_stats_cell, mDemoGroupStats));
             return rootView;
         }
     }

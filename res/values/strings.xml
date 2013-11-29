@@ -90,5 +90,20 @@
         <item>Inhsaa S. Hahs</item>
         <item>Nitsuj Mij</item>
     </string-array>
+    <string-array name="demo_group_convs">
+        <item>Lastav Timan: Yo</item>
+        <item>Ramma Devaj: Si Senor</item>
+        <item>Inhsaa S. Hahs: Muahahaha</item>
+        <item>Nitsuj Mij: Why?</item>
+    </string-array>
+    <string-array name="demo_group_stats">
+        <item>Current Champion: Nitsuj Mij</item>
+        <item>Top Contender: Inhsaa S. Hahs</item>
+        <item>Total Match: 11</item>
+        <item>Successful Defends (of Belt): 4</item>
+        <item>Successful Challenges (of Belt): 7</item>
+        <item>MVP: Ramma Devaj</item>
+        <item>Duels: 3</item>
+    </string-array>
 
 </resources>

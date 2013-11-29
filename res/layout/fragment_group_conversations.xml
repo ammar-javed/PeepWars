@@ -10,16 +10,16 @@
     tools:context=".MainActivity$DummySectionFragment" >
 
     <TextView
-        android:id="@+id/group_home_label"
+        android:id="@+id/group_conv_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     
     <ListView
-	    android:id="@+id/group_home"
+	    android:id="@+id/group_conversations"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:background="#111"
-	    android:divider="@android:color/holo_red_dark"
+	    android:background="#fff"
+	    android:divider="@android:color/darker_gray"
 	    android:dividerHeight="1dp"/>
 
 </RelativeLayout>
