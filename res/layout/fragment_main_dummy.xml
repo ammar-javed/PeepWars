@@ -17,7 +17,7 @@
 	    android:id="@+id/group_home_dummy"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:background="#111"
+    	android:background="@drawable/main_background"
 	    android:divider="@android:color/holo_red_dark"
 	    android:dividerHeight="1dp"/>
 

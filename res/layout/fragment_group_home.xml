@@ -18,8 +18,8 @@
 	    android:id="@+id/group_home"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:background="#111"
-	    android:divider="@android:color/holo_red_dark"
+    	android:background="@drawable/main_background"
+	    android:divider="@android:color/darker_gray"
 	    android:dividerHeight="1dp"/>
 
 </RelativeLayout>

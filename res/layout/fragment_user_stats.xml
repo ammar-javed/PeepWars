@@ -4,7 +4,7 @@
     android:id="@+id/user_stats"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/main_background"
     android:divider="@android:color/darker_gray"
     android:dividerHeight="1dp"/>
 

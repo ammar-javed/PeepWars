@@ -18,8 +18,9 @@
 	    android:id="@+id/group_conversations"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:background="#fff"
+    	android:background="@drawable/main_background"
 	    android:divider="@android:color/darker_gray"
+	    android:color="#efefef"
 	    android:dividerHeight="1dp"/>
 
 </RelativeLayout>
