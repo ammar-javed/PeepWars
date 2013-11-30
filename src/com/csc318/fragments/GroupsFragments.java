@@ -4,6 +4,8 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -30,6 +32,9 @@ public class GroupsFragments extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_groups, container, false);
         int i = getArguments().getInt(ARG_PLANET_NUMBER);
         String planet = getResources().getStringArray(R.array.drawer_options)[i];
+        
+        //Populate action bar
+        setHasOptionsMenu(true);
 
 //        int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
 //                        "drawable", getActivity().getPackageName());
@@ -41,6 +46,12 @@ public class GroupsFragments extends Fragment {
 		mGroupList.setOnItemClickListener(new GroupItemClickListener());
         getActivity().setTitle(planet);
         return rootView;
+    }
+    
+    @Override
+    public void onCreateOptionsMenu(
+          Menu menu, MenuInflater inflater) {
+       inflater.inflate(R.menu.add_new_button, menu);
     }
 }
 

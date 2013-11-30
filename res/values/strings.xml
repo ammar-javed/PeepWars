@@ -10,6 +10,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="new_conversation">New Conversation</string>
     <string name="dp_place_holder">Display Picture Place Holder</string>
+    <string name="add_new">Add New</string>
+    <string name="group_calendar">Group calendar</string>
     <string-array name="drawer_options">
         <item>Feed</item>
         <item>Conversations</item>

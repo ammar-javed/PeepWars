@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <!-- Search, should appear as action button -->
     <item android:id="@+id/action_new_conv"
-          android:icon="@drawable/add_button"
           android:title="@string/new_conversation"
-          android:showAsAction="ifRoom" />
+          android:showAsAction="ifRoom"
+          android:actionLayout="@layout/menu_button_press"/>
 </menu>

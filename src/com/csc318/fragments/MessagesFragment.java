@@ -51,7 +51,7 @@ public class MessagesFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(
           Menu menu, MenuInflater inflater) {
-       inflater.inflate(R.menu.feedfrag, menu);
+       inflater.inflate(R.menu.add_new_button, menu);
     }
 
 }
