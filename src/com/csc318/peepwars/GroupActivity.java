@@ -2,6 +2,7 @@ package com.csc318.peepwars;
 
 import java.util.Locale;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -14,6 +15,7 @@ import com.csc318.groupfragments.GroupCalendar;
 import com.csc318.groupfragments.GroupChat;
 import com.csc318.groupfragments.GroupHome;
 import com.csc318.groupfragments.GroupStats;
+import com.csc318.utilities.HideKeyboardListener;
 
 public class GroupActivity extends FragmentActivity {
 
@@ -45,6 +47,8 @@ public class GroupActivity extends FragmentActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        
+        HideKeyboardListener.setupUI((Activity) this, findViewById(R.id.pager));
 
     }
 
