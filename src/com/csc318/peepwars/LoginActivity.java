@@ -1,5 +1,7 @@
 package com.csc318.peepwars;
 
+import com.csc318.utilities.HideKeyboardListener;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -85,6 +87,10 @@ public class LoginActivity extends Activity {
 						attemptLogin();
 					}
 				});
+		
+
+        //Set keyboard listener
+        HideKeyboardListener.setupUI((Activity) this, findViewById(R.id.login_form));
 	}
 
 	@Override

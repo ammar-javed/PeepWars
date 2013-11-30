@@ -1,15 +1,15 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".LoginActivity" >
+    tools:context=".LoginActivity">
 
     <!-- Login progress -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/login_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="vertical"
         android:background="@drawable/main_background"
         android:visibility="gone" >
@@ -29,7 +29,7 @@
             android:fontFamily="sans-serif-light"
             android:text="@string/login_progress_signing_in"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <!-- Login form -->
 

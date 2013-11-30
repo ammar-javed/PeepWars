@@ -108,13 +108,13 @@ public class GroupActivity extends FragmentActivity {
             switch (position) {
             // maybe add all the strings created here to strings.xml
                 case 0:
-                    return "Group Home";
+                    return "Home";
                 case 1:
-                    return "Group Conversation";
+                    return "Chat";
                 case 2:
-                	return "Group Calendar";                    
+                	return "Calendar";                    
                 case 3:
-                	return "Group Statistics";
+                	return "Statistics";
             }
             return null;
         }
