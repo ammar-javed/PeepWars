@@ -4,6 +4,8 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,6 +30,9 @@ public class MessagesFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_conversations, container, false);
         int i = getArguments().getInt(ARG_PLANET_NUMBER);
         String planet = getResources().getStringArray(R.array.drawer_options)[i];
+        
+        //Populate action bar
+        setHasOptionsMenu(true);
 
 //        int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
 //                        "drawable", getActivity().getPackageName());
@@ -42,4 +47,11 @@ public class MessagesFragment extends Fragment {
         getActivity().setTitle(planet);
         return rootView;
     }
+    
+    @Override
+    public void onCreateOptionsMenu(
+          Menu menu, MenuInflater inflater) {
+       inflater.inflate(R.menu.feedfrag, menu);
+    }
+
 }

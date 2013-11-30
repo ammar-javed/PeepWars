@@ -8,6 +8,7 @@
     <string name="title_section3">Section 3</string>
     <string name="title_activity_feed">FeedActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="new_conversation">New Conversation</string>
     <string-array name="drawer_options">
         <item>Feed</item>
         <item>Conversations</item>
