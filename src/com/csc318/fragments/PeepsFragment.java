@@ -24,6 +24,7 @@ public class PeepsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+    	
 		View rootView = inflater.inflate(R.layout.fragment_peeps, container, false);
         int i = getArguments().getInt(ARG_PLANET_NUMBER);
         String planet = getResources().getStringArray(R.array.drawer_options)[i];

@@ -9,6 +9,7 @@
     <string name="title_activity_feed">FeedActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="new_conversation">New Conversation</string>
+    <string name="dp_place_holder">Display Picture Place Holder</string>
     <string-array name="drawer_options">
         <item>Feed</item>
         <item>Conversations</item>
@@ -78,6 +79,7 @@
         <item>Group 8</item>
     </string-array>
   	<string-array name="demo_settings">
+        <item>Change Display Picture</item>
         <item>Change Display Name</item>
         <item>Reset Password</item>
         <item>Link/Unlink Facebook</item>

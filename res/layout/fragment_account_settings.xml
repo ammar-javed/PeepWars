@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/settings"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/main_background"
-    android:divider="@android:color/darker_gray"
-    android:dividerHeight="1dp"/>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background">
+	<ImageView 
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/display_pic_placeholder"
+        android:contentDescription="@string/dp_place_holder"/>
+        
+	<ListView
+	    android:id="@+id/settings"
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_below="@id/dp"
+	    android:background="@drawable/main_background"
+	    android:divider="@android:color/darker_gray"
+	    android:dividerHeight="1dp"/>
+	        
+</RelativeLayout>
