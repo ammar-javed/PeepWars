@@ -1,12 +1,4 @@
-package com.csc318.peepwars;
-
-import com.csc318.fragments.CalendarFragment;
-import com.csc318.fragments.FeedFragment;
-import com.csc318.fragments.GroupsFragments;
-import com.csc318.fragments.MessagesFragment;
-import com.csc318.fragments.PeepsFragment;
-import com.csc318.fragments.SettingsFragment;
-import com.csc318.fragments.StatsFragment;
+package com.csc318.utilities;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -23,53 +15,65 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.csc318.fragments.CalendarFragment;
+import com.csc318.fragments.FeedFragment;
+import com.csc318.fragments.GroupsFragments;
+import com.csc318.fragments.MessagesFragment;
+import com.csc318.fragments.PeepsFragment;
+import com.csc318.fragments.SettingsFragment;
+import com.csc318.fragments.StatsFragment;
+import com.csc318.peepwars.R;
+
 public class Drawer {
 	
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    private Activity mActivity;
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    private String[] mDrawerOptions;
-    
-    private Activity mActivity;
+    private String[] mPlanetTitles;
     private Bundle mSavedInstanceState;
-	
-	public Drawer(Activity activity, Bundle savedInstanceState){
-		
-		mActivity = activity;
-		mSavedInstanceState = savedInstanceState;
-		
+    
+    public Drawer(Activity activity, Bundle savedInstanceState, DrawerLayout dL){
         //TODO: Change title to email address used during login
+    	mActivity = activity;
         mTitle = mDrawerTitle = "PeepWars";
-        mDrawerOptions = mActivity.getResources().getStringArray(R.array.drawer_options);
-        mDrawerLayout = (DrawerLayout) mActivity.findViewById(R.id.drawer_layout);
+        mPlanetTitles = mActivity.getResources().getStringArray(R.array.drawer_options);
+        mDrawerLayout = dL;
         mDrawerList = (ListView) mActivity.findViewById(R.id.left_drawer);
+        mSavedInstanceState = savedInstanceState;
+        initDrawer();
+        initDrawerToggle();
+    }
+    
+    private void initDrawer(){
+//      // set a custom shadow that overlays the main content when the drawer opens
+//      mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+      // set up the drawer's list view with items and click listener
+      mDrawerList.setAdapter(new ArrayAdapter<String>(mActivity,
+              R.layout.drawer_list_item, mPlanetTitles));
+      mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-//        // set a custom shadow that overlays the main content when the drawer opens
-//        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        // set up the drawer's list view with items and click listener
-        mDrawerList.setAdapter(new ArrayAdapter<String>(mActivity,
-                R.layout.drawer_list_item, mDrawerOptions));
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-        // enable ActionBar app icon to behave as action to toggle nav drawer
-        mActivity.getActionBar().setDisplayHomeAsUpEnabled(true);
-        mActivity.getActionBar().setHomeButtonEnabled(true);
-
-        // ActionBarDrawerToggle ties together the the proper interactions
+      // enable ActionBar app icon to behave as action to toggle nav drawer
+      mActivity.getActionBar().setDisplayHomeAsUpEnabled(true);
+      mActivity.getActionBar().setHomeButtonEnabled(true);
+    }
+    
+    private void initDrawerToggle(){
+        // ActionBarDrawerToggle ties together the proper interactions
         // between the sliding drawer and the action bar app icon
         mDrawerToggle = new ActionBarDrawerToggle(
-        		mActivity,                  /* host Activity */
+                mActivity,                  /* host Activity */
                 mDrawerLayout,         /* DrawerLayout object */
                 R.drawable.ic_drawer,  /* nav drawer image to replace 'Up' caret */
                 R.string.drawer_open,  /* "open drawer" description for accessibility */
                 R.string.drawer_close  /* "close drawer" description for accessibility */
                 ) {
             public void onDrawerClosed(View view) {
-            	mActivity.getActionBar().setTitle(mTitle);
-            	mActivity.invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+                mActivity.getActionBar().setTitle(mTitle);
+                mActivity.invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             public void onDrawerOpened(View drawerView) {
@@ -77,14 +81,15 @@ public class Drawer {
             	mActivity.invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
+        
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (mSavedInstanceState == null) {
             selectItem(0);
         }
-		
-	}
-	
+    }
+    
+
     /* Called whenever we call invalidateOptionsMenu() */
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
@@ -167,7 +172,7 @@ public class Drawer {
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);
-        setTitle(mDrawerOptions[position]);
+        setTitle(mPlanetTitles[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 
@@ -181,17 +186,15 @@ public class Drawer {
      * onPostCreate() and onConfigurationChanged()...
      */
 
-    protected void onPostCreate(Bundle savedInstanceState) {
-        //super.onPostCreate(savedInstanceState);
+    public void onPostCreate(Bundle savedInstanceState) {
+        //mActivity.onPostCreate(savedInstanceState);
         // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle.syncState();
     }
 
     public void onConfigurationChanged(Configuration newConfig) {
-        //super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
 
 }
