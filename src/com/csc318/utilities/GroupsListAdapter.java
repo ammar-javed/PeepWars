@@ -1,4 +1,9 @@
-package com.csc318.peepwars;
+package com.csc318.utilities;
+
+import com.csc318.peepwars.Group;
+import com.csc318.peepwars.R;
+import com.csc318.peepwars.R.drawable;
+import com.csc318.peepwars.R.id;
 
 import android.app.Activity;
 import android.content.Context;

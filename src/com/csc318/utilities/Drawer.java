@@ -36,12 +36,12 @@ public class Drawer {
     private String[] mPlanetTitles;
     private Bundle mSavedInstanceState;
     
-    public Drawer(Activity activity, Bundle savedInstanceState, DrawerLayout dL){
+    public Drawer(Activity activity, Bundle savedInstanceState){
         //TODO: Change title to email address used during login
     	mActivity = activity;
         mTitle = mDrawerTitle = "PeepWars";
         mPlanetTitles = mActivity.getResources().getStringArray(R.array.drawer_options);
-        mDrawerLayout = dL;
+        mDrawerLayout = (DrawerLayout) mActivity.findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) mActivity.findViewById(R.id.left_drawer);
         mSavedInstanceState = savedInstanceState;
         initDrawer();

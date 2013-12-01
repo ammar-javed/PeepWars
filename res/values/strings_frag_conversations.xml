@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="message_one">Nullam ultrices nulla eros, ut fermentum ante semper ac. 
+        Duis cursus mauris id augue tincidunt pretium.</string>
+    <string name="message_two">Nunc et lorem interdum, tristique sem ac, dictum eros.</string>
+    <string name="message_three">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Aliquam tempor, ipsum laoreet venenatis porta, magna justo euismod neque, nec semper neque ipsum eget sapien.</string>
+    <string name="message_four">Cras ac leo nec mauris gravida commodo eget vel leo.</string>
+    <string name="message_five">Trololol</string>
+    <string name="message_six">I\'ll win. watch me</string>
+    
+    
+</resources>

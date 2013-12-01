@@ -13,8 +13,8 @@ import android.widget.ListView;
 
 import com.csc318.peepwars.Group;
 import com.csc318.peepwars.GroupActivity;
-import com.csc318.peepwars.GroupsListAdapter;
 import com.csc318.peepwars.R;
+import com.csc318.utilities.GroupsListAdapter;
 
 /**
  * Fragment that appears in the "content_frame", shows a planet

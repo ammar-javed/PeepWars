@@ -19,7 +19,7 @@ public class FeedActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
-        mDrawer = new Drawer(this, savedInstanceState, (DrawerLayout) findViewById(R.id.drawer_layout));
+        mDrawer = new Drawer(this, savedInstanceState);
     }
     
     @Override
