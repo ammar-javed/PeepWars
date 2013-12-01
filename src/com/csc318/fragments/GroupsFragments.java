@@ -9,21 +9,25 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.csc318.peepwars.Group;
 import com.csc318.peepwars.GroupActivity;
+import com.csc318.peepwars.GroupsListAdapter;
 import com.csc318.peepwars.R;
 
 /**
  * Fragment that appears in the "content_frame", shows a planet
  */
 public class GroupsFragments extends Fragment {
+	
     public static final String ARG_PLANET_NUMBER = "planet_number";
-    private String[] mGroups;
+    private Group[] mGroups;
+    //private GroupsListAdapter mAdapter;
 
     public GroupsFragments() {
-        // Empty constructor required for fragment subclasses
+        mGroups = new Group[]{new Group("Team winners"), new Group("Gorillaz"), new Group("Tugee"), new Group("YoloWin"),
+        		new Group ("CSFaculty"), new Group("CSStudents"), new Group("CSSU")};
     }
 
     @Override
@@ -31,7 +35,7 @@ public class GroupsFragments extends Fragment {
             Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_groups, container, false);
         int i = getArguments().getInt(ARG_PLANET_NUMBER);
-        String planet = getResources().getStringArray(R.array.drawer_options)[i];
+        String currentSelectedOption = getResources().getStringArray(R.array.drawer_options)[i];
         
         //Populate action bar
         setHasOptionsMenu(true);
@@ -39,12 +43,11 @@ public class GroupsFragments extends Fragment {
 //        int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
 //                        "drawable", getActivity().getPackageName());
         ListView mGroupList = (ListView) rootView.findViewById(R.id.groups_list);
-        mGroups = getResources().getStringArray(R.array.demo_groups);
-        mGroupList.setAdapter(new ArrayAdapter<String>(getActivity(),
-                R.layout.fragment_groups_cell, mGroups));
+        //mAdapter = new GroupsListAdapter(rootView.getContext(), R.layout.fragment_groups_cell, mGroups);
+        mGroupList.setAdapter(new GroupsListAdapter(rootView.getContext(), R.layout.fragment_groups_cell, mGroups));
         // setting the listener to enable clickable groups
 		mGroupList.setOnItemClickListener(new GroupItemClickListener());
-        getActivity().setTitle(planet);
+        getActivity().setTitle(currentSelectedOption);
         return rootView;
     }
     

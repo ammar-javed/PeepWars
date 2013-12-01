@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/group"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceListItemSmall"
-    android:gravity="center_vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:textColor="#efefef"
-    android:background="?android:attr/activatedBackgroundIndicator"
-    android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
+    android:id="@+id/groups_list_cell"
+    android:layout_height="wrap_content">
+    
+    <ImageView
+        android:id="@+id/group_dp"
+        android:src="@drawable/display_pic_placeholder"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:contentDescription="@string/group_image_desc"/>
+    
+    <TextView
+	    android:id="@+id/group_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="15dp"
+	    android:textSize="20sp"
+	    android:layout_gravity="center_vertical"
+	    android:paddingRight="16dp"
+	    android:textColor="#efefef"/>
+	    
+</LinearLayout>

@@ -2,44 +2,64 @@ package com.csc318.peepwars;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class GroupsListAdapter extends ArrayAdapter<String>{
-	 
-	private final Context mContext;
-	private int nNumRows;
-	private Group[] mGroups;
-
-	public GroupsListAdapter(Activity context, Group[] groupList) {
-		super(context, R.layout.fragment_groups);
-		this.mContext = context;
-		this.nNumRows = 0;	
-		this.mGroups = groupList;
+public class GroupsListAdapter extends ArrayAdapter<Group>{
+	
+	Context gContext;
+	int gLayoutID;
+	Group[] gList = null;
+	
+	public GroupsListAdapter(Context context, int layoutRId, Group[] groups){
+		super(context, layoutRId, groups);
+		this.gContext = context;
+		this.gLayoutID = layoutRId;
+		this.gList = groups;
 	}
 	
-	@Override
-	public int getCount() {
-		return 5;
-	}
-	
-	public void getView(){
-		this.nNumRows++;
-	}
-
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = null;
-		if (convertView == null){
-			LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = inflater.inflate(R.layout.fragment_groups_cell, null);
-		} else {
-			Group i = mGroups[position];
-			
-		}
-		
-		return view;
-	}
+  @Override
+  public View getView(int position, View convertView, ViewGroup parent) {
+      View row = convertView;
+      GroupHolder holder = null;
+      
+      if(row == null)
+      {
+          LayoutInflater inflater = ((Activity)gContext).getLayoutInflater();
+          row = inflater.inflate(gLayoutID, parent, false);
+          
+          holder = new GroupHolder();
+          holder.imgIcon = (ImageView)row.findViewById(R.id.group_dp);
+          holder.txtTitle = (TextView)row.findViewById(R.id.group_name);
+          
+          row.setTag(holder);
+      }
+      else
+      {
+          holder = (GroupHolder)row.getTag();
+      }
+      
+      Log.d("ADAPTER", "Position = " + position);
+      
+      Group group = gList[position];
+      holder.txtTitle.setText(group.getgName());
+      if (group.getgPicture() == null){
+    	  holder.imgIcon.setImageDrawable(gContext.getResources().getDrawable(R.drawable.display_pic_placeholder));
+      } else {
+          holder.imgIcon.setImageDrawable(group.getgPicture());
+      }
+      
+      return row;
+  }
+  
+	static class GroupHolder
+	{
+	    ImageView imgIcon;
+	    TextView txtTitle;
+	}	
 }

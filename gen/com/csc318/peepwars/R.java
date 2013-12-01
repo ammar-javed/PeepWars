@@ -44,28 +44,30 @@ public final class R {
         public static final int tab_button=0x7f020009;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f09002b;
-        public static final int action_new_conv=0x7f090029;
-        public static final int action_settings=0x7f09002a;
+        public static final int action_forgot_password=0x7f09002d;
+        public static final int action_new_conv=0x7f09002b;
+        public static final int action_settings=0x7f09002c;
         public static final int content_frame=0x7f090001;
         public static final int conversations=0x7f090011;
         public static final int dp=0x7f09000e;
         public static final int drawer_layout=0x7f090000;
         public static final int email=0x7f090009;
-        public static final int group=0x7f090021;
         public static final int group_calendar_img=0x7f090016;
         public static final int group_calendar_label=0x7f090015;
         public static final int group_conv=0x7f090019;
         public static final int group_conv_label=0x7f090017;
         public static final int group_conversations=0x7f090018;
+        public static final int group_dp=0x7f090022;
         public static final int group_home=0x7f09001b;
-        public static final int group_home_dummy=0x7f090023;
+        public static final int group_home_dummy=0x7f090025;
         public static final int group_home_label=0x7f09001a;
+        public static final int group_name=0x7f090023;
         public static final int group_stat_cell=0x7f09001f;
         public static final int group_stats=0x7f09001e;
         public static final int group_stats_label=0x7f09001d;
         public static final int group_user=0x7f09001c;
         public static final int groups_list=0x7f090020;
+        public static final int groups_list_cell=0x7f090021;
         public static final int left_drawer=0x7f090002;
         public static final int login=0x7f09000b;
         public static final int login_form=0x7f090007;
@@ -77,17 +79,17 @@ public final class R {
         public static final int pager=0x7f090003;
         public static final int pager_title_strip=0x7f090004;
         public static final int password=0x7f09000a;
-        public static final int peep_name=0x7f090025;
+        public static final int peep_name=0x7f090027;
         public static final int peep_wars_logo=0x7f090008;
-        public static final int peeps=0x7f090024;
-        public static final int section_label=0x7f090022;
+        public static final int peeps=0x7f090026;
+        public static final int section_label=0x7f090024;
         public static final int setting=0x7f090010;
         public static final int settings=0x7f09000f;
         public static final int sign_in_button=0x7f09000c;
         public static final int social_media_logos=0x7f09000d;
-        public static final int statistic=0x7f090028;
-        public static final int user_calendar_img=0x7f090026;
-        public static final int user_stats=0x7f090027;
+        public static final int statistic=0x7f09002a;
+        public static final int user_calendar_img=0x7f090028;
+        public static final int user_stats=0x7f090029;
     }
     public static final class layout {
         public static final int activity_feed=0x7f030000;
@@ -124,31 +126,32 @@ public final class R {
         public static final int main=0x7f080003;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f050014;
+        public static final int action_forgot_password=0x7f050015;
         public static final int action_settings=0x7f050001;
-        public static final int action_sign_in_register=0x7f050012;
-        public static final int action_sign_in_short=0x7f050013;
-        public static final int action_websearch=0x7f05000d;
+        public static final int action_sign_in_register=0x7f050013;
+        public static final int action_sign_in_short=0x7f050014;
+        public static final int action_websearch=0x7f05000e;
         public static final int add_new=0x7f050009;
         public static final int app_name=0x7f050000;
-        public static final int app_not_available=0x7f05000e;
+        public static final int app_not_available=0x7f05000f;
         public static final int dp_place_holder=0x7f050008;
-        public static final int drawer_close=0x7f05000c;
-        public static final int drawer_open=0x7f05000b;
-        public static final int error_field_required=0x7f050019;
-        public static final int error_incorrect_password=0x7f050018;
-        public static final int error_invalid_email=0x7f050016;
-        public static final int error_invalid_password=0x7f050017;
+        public static final int drawer_close=0x7f05000d;
+        public static final int drawer_open=0x7f05000c;
+        public static final int error_field_required=0x7f05001a;
+        public static final int error_incorrect_password=0x7f050019;
+        public static final int error_invalid_email=0x7f050017;
+        public static final int error_invalid_password=0x7f050018;
         public static final int group_calendar=0x7f05000a;
+        public static final int group_image_desc=0x7f05000b;
         public static final int hello_world=0x7f050006;
-        public static final int login_progress_signing_in=0x7f050015;
+        public static final int login_progress_signing_in=0x7f050016;
         public static final int new_conversation=0x7f050007;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f050010;
-        public static final int prompt_password=0x7f050011;
+        public static final int prompt_email=0x7f050011;
+        public static final int prompt_password=0x7f050012;
         public static final int title_activity_feed=0x7f050005;
-        public static final int title_activity_login=0x7f05000f;
+        public static final int title_activity_login=0x7f050010;
         public static final int title_section1=0x7f050002;
         public static final int title_section2=0x7f050003;
         public static final int title_section3=0x7f050004;
