@@ -1,9 +1,6 @@
 package com.csc318.utilities;
 
-import com.csc318.peepwars.Group;
-import com.csc318.peepwars.R;
-import com.csc318.peepwars.R.drawable;
-import com.csc318.peepwars.R.id;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,17 +12,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.csc318.peepwars.Group;
+import com.csc318.peepwars.R;
+
 public class GroupsListAdapter extends ArrayAdapter<Group>{
 	
 	Context gContext;
 	int gLayoutID;
-	Group[] gList = null;
+	ArrayList<Group> gList = null;
 	
-	public GroupsListAdapter(Context context, int layoutRId, Group[] groups){
-		super(context, layoutRId, groups);
+	public GroupsListAdapter(Context context, int layoutRId, ArrayList<Group> mGroups){
+		super(context, layoutRId, mGroups);
 		this.gContext = context;
 		this.gLayoutID = layoutRId;
-		this.gList = groups;
+		this.gList = mGroups;
 	}
 	
   @Override
@@ -51,7 +51,7 @@ public class GroupsListAdapter extends ArrayAdapter<Group>{
       
       Log.d("ADAPTER", "Position = " + position);
       
-      Group group = gList[position];
+      Group group = gList.get(position);
       holder.txtTitle.setText(group.getgName());
       if (group.getgPicture() == null){
     	  holder.imgIcon.setImageDrawable(gContext.getResources().getDrawable(R.drawable.display_pic_placeholder));

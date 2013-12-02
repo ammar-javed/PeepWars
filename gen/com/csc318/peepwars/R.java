@@ -41,12 +41,13 @@ public final class R {
         public static final int peepwarslogo=0x7f020006;
         public static final int small_logo=0x7f020007;
         public static final int social_logos=0x7f020008;
-        public static final int tab_button=0x7f020009;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f090032;
-        public static final int action_new_conv=0x7f090030;
-        public static final int action_settings=0x7f090031;
+        public static final int action_forgot_password=0x7f090035;
+        public static final int action_new=0x7f090033;
+        public static final int action_settings=0x7f090034;
+        public static final int cancel_group=0x7f09002d;
+        public static final int confirm_group=0x7f09002e;
         public static final int content_frame=0x7f090001;
         public static final int conv_info=0x7f090013;
         public static final int conversations=0x7f090011;
@@ -76,6 +77,7 @@ public final class R {
         public static final int login_status=0x7f090005;
         public static final int login_status_message=0x7f090006;
         public static final int message_time=0x7f090016;
+        public static final int name_field=0x7f09002c;
         public static final int name_time_container=0x7f090014;
         public static final int news_feed=0x7f090018;
         public static final int news_feed_item=0x7f09001a;
@@ -86,15 +88,15 @@ public final class R {
         public static final int peep_name=0x7f090015;
         public static final int peep_pic=0x7f090012;
         public static final int peep_wars_logo=0x7f090008;
-        public static final int peeps=0x7f09002c;
+        public static final int peeps=0x7f09002f;
         public static final int section_label=0x7f09002a;
         public static final int setting=0x7f090010;
         public static final int settings=0x7f09000f;
         public static final int sign_in_button=0x7f09000c;
         public static final int social_media_logos=0x7f09000d;
-        public static final int statistic=0x7f09002f;
-        public static final int user_calendar_img=0x7f09002d;
-        public static final int user_stats=0x7f09002e;
+        public static final int statistic=0x7f090032;
+        public static final int user_calendar_img=0x7f090030;
+        public static final int user_stats=0x7f090031;
     }
     public static final class layout {
         public static final int activity_feed=0x7f030000;
@@ -117,12 +119,12 @@ public final class R {
         public static final int fragment_groups=0x7f030011;
         public static final int fragment_groups_cell=0x7f030012;
         public static final int fragment_main_dummy=0x7f030013;
-        public static final int fragment_peeps=0x7f030014;
-        public static final int fragment_peeps_cell=0x7f030015;
-        public static final int fragment_user_calendar=0x7f030016;
-        public static final int fragment_user_stats=0x7f030017;
-        public static final int fragment_user_stats_cell=0x7f030018;
-        public static final int menu_button_press=0x7f030019;
+        public static final int fragment_new_group=0x7f030014;
+        public static final int fragment_peeps=0x7f030015;
+        public static final int fragment_peeps_cell=0x7f030016;
+        public static final int fragment_user_calendar=0x7f030017;
+        public static final int fragment_user_stats=0x7f030018;
+        public static final int fragment_user_stats_cell=0x7f030019;
     }
     public static final class menu {
         public static final int add_new_button=0x7f080000;

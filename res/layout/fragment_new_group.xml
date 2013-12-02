@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_background">
+    
+    <EditText
+        android:id="@+id/name_field"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Group name"
+        android:cursorVisible="true"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"/> 
+        
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@id/name_field"
+		android:layout_centerInParent="true"
+   	    android:layout_marginTop="10dp">
+   	    
+        <Button 
+	   	    android:id="@+id/cancel_group"
+	   	    android:text="Cancel"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:textColor="#fff"/>
+        
+        <Button 
+	   	    android:id="@+id/confirm_group"
+	   	    android:text="Create"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:textColor="#fff"
+	   	    android:onClick="confirmGroup"/>
+    </LinearLayout>
+        
+</RelativeLayout>

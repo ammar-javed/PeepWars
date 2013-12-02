@@ -34,7 +34,7 @@ public class FeedFragment extends Fragment {
         ListView mFeedList = (ListView) rootView.findViewById(R.id.news_feed);
         
         mDemoFeed = new NewsItem[]{
-        		new NewsItem(0, "hi"),
+        		new NewsItem(0, ""),
         		new NewsItem(0, ""),
         		new NewsItem(0, ""),
         		new NewsItem(0, ""),
@@ -45,7 +45,6 @@ public class FeedFragment extends Fragment {
         int j;
         for (j = 0; j < 6; j++){
         	mDemoFeed[j].setnMessage(news[j]);
-        	Log.d("Feed", news[j]);
         }
         fAdapter = new FeedAdapter(rootView.getContext(), R.layout.fragment_feed_item, mDemoFeed);
         mFeedList.setAdapter(fAdapter);

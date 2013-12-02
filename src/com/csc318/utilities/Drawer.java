@@ -3,6 +3,7 @@ package com.csc318.utilities;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -22,6 +23,7 @@ import com.csc318.fragments.MessagesFragment;
 import com.csc318.fragments.PeepsFragment;
 import com.csc318.fragments.SettingsFragment;
 import com.csc318.fragments.StatsFragment;
+import com.csc318.peepwars.NewGroupActivity;
 import com.csc318.peepwars.R;
 
 public class Drawer {
@@ -104,22 +106,18 @@ public class Drawer {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
+        Fragment fragment;
         // Handle action buttons
         switch(item.getItemId()) {
-//        case R.id.action_websearch:
-//            // create intent to perform web search for this planet
-//            Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-//            intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
-//            // catch event that there's no activity to handle intent
-//            if (intent.resolveActivity(getPackageManager()) != null) {
-//                startActivity(intent);
-//            } else {
-//                Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
-//            }
-//            return true;
+        case R.id.action_new:
+            fragment = new NewGroupActivity();
+            break;
         default:
-            return mActivity.onOptionsItemSelected(item);
+            return false;
         }
+        FragmentManager fragmentManager = mActivity.getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        return true;
     }
 
     /* The click listner for ListView in the navigation drawer */
@@ -132,18 +130,14 @@ public class Drawer {
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-    	//TODO: Remove log
-    	Log.w("DrawerItemClick", "" + position);
-    	Fragment fragment;
+       	Fragment fragment;
     	
     	switch (position){
     	case 0:
     		fragment = new FeedFragment();
-//    		fm.beginTransaction().addToBackStack("FeedFragment").commit();
     		break;
     	case 1:
     		fragment = new MessagesFragment();
-//    		fm.beginTransaction().addToBackStack("MessagesFragment").commit();
     		break;
     	case 2:
     		fragment = new CalendarFragment();
@@ -168,7 +162,13 @@ public class Drawer {
         fragment.setArguments(args);
 
         FragmentManager fragmentManager = mActivity.getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        
+        boolean fragmentPopped = fragmentManager.popBackStackImmediate(fragment.getClass().getName(), 0);
+        		
+        if(!fragmentPopped){
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.replace(R.id.content_frame, fragment).addToBackStack(fragment.getClass().getName()).commit();
+        }
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);
